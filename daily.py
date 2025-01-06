@@ -36,7 +36,7 @@ def git_commit_and_push(commit_message):
     try:
         subprocess.run(["git", "add", "."], capture_output=True, text=True, check=True)
         subprocess.run(["git", "commit", "-m", commit_message], capture_output=True, text=True, check=True)
-        subprocess.run(["git", "push"], capture_output=True, text=True, check=True)
+        subprocess.run(["git", "push", "origin", "main"], capture_output=True, text=True, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Git operation failed: {e}")
 
