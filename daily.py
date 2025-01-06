@@ -40,6 +40,10 @@ def git_commit_and_push(commit_message):
     except subprocess.CalledProcessError as e:
         print(f"Git operation failed: {e}")
 
+def chain_question_from_answer(answer):
+    """Generate a follow-up question based on the given answer."""
+    return f"Can you provide more details about: {answer.split('.')[0]}?"
+
 
 def main():
     # Get the current date
@@ -60,6 +64,16 @@ def main():
     answers_file_path = os.path.join(os.getcwd(), ANSWERS_FILE)
     append_to_file(questions_file_path, question_content)
     append_to_file(answers_file_path, answer_content)
+
+    # Generate a follow-up question based on the answer
+    follow_up_prompt = chain_question_from_answer(answer)
+    follow_up_answer = get_answer_from_ollama(follow_up_prompt)
+
+    # Append follow-up content
+    follow_up_question_content = f"[{today.strftime('%Y-%m-%d')}]: {follow_up_prompt}"
+    follow_up_answer_content = f"[{today.strftime('%Y-%m-%d')}]: {follow_up_answer}"
+    append_to_file(questions_file_path, follow_up_question_content)
+    append_to_file(answers_file_path, follow_up_answer_content)
 
     # Commit and push changes to the Git repository
     commit_message = f"Add prompt and answer for {today.strftime('%Y-%m-%d')}"
