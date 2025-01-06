@@ -34,7 +34,7 @@ def append_to_file(file_path, content):
 def git_commit_and_push(commit_message):
     """Add, commit, and push changes to the Git repository."""
     try:
-        subprocess.run(["git", "add", "-A"], capture_output=True, text=True, check=True)
+        subprocess.run(["git", "add", "."], capture_output=True, text=True, check=True)
         subprocess.run(["git", "commit", "-m", commit_message], capture_output=True, text=True, check=True)
         subprocess.run(["git", "push"], capture_output=True, text=True, check=True)
     except subprocess.CalledProcessError as e:
