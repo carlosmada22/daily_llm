@@ -2,30 +2,24 @@ import os
 import subprocess
 import datetime
 import requests
+from ollama import Client
 
 # Configuration
-OLLAMA_API_URL = "http://localhost:11434"  # Ollama's default local API
-PROMPTS_FILE = "questions_and_answers.txt"
-REPO_PATH = "/path/to/your/repo"  # Path to your Git repository
+PROMPTS_FILE = "questions.txt"
+ANSWERS_FILE = "answers.txt"
 
-
-def get_random_prompt():
-    """Fetch a random prompt from Ollama."""
-    try:
-        response = requests.post(f"{OLLAMA_API_URL}/api/random_prompt")
-        response.raise_for_status()
-        return response.json().get("prompt", "What is your favorite book?")
-    except requests.RequestException as e:
-        print(f"Error fetching prompt from Ollama: {e}")
-        return "What is your favorite book?"  # Fallback prompt
+def get_prompt_for_date(date):
+    """Generate a prompt asking about something important that happened on the given date in history."""
+    return f"What is something important that happened on {date.strftime('%B %d')} in history?"
 
 
 def get_answer_from_ollama(prompt):
     """Send the prompt to Ollama and get an answer."""
     try:
-        response = requests.post(f"{OLLAMA_API_URL}/api/answer", json={"prompt": prompt})
-        response.raise_for_status()
-        return response.json().get("answer", "Sorry, I couldn't answer that.")
+        client = Client()
+        raw_response = client.generate(model="llama3.2", prompt=prompt)
+        print(raw_response.response)
+        return raw_response.response
     except requests.RequestException as e:
         print(f"Error getting answer from Ollama: {e}")
         return "Sorry, I couldn't answer that."  # Fallback answer
@@ -37,34 +31,39 @@ def append_to_file(file_path, content):
         file.write(content + "\n")
 
 
-def git_commit_and_push(repo_path, commit_message):
+def git_commit_and_push(commit_message):
     """Add, commit, and push changes to the Git repository."""
     try:
-        subprocess.run(["git", "add", "-A"], cwd=repo_path, check=True)
-        subprocess.run(["git", "commit", "-m", commit_message], cwd=repo_path, check=True)
-        subprocess.run(["git", "push"], cwd=repo_path, check=True)
+        subprocess.run(["git", "add", "-A"], capture_output=True, text=True, check=True)
+        subprocess.run(["git", "commit", "-m", commit_message], capture_output=True, text=True, check=True)
+        subprocess.run(["git", "push"], capture_output=True, text=True, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Git operation failed: {e}")
 
 
 def main():
     # Get the current date
-    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    today = datetime.datetime.now()
 
-    # Get a random prompt and its answer
-    prompt = get_random_prompt()
+    # Generate a prompt for today's date in history
+    prompt = get_prompt_for_date(today)
+
+    # Get the answer from Ollama
     answer = get_answer_from_ollama(prompt)
 
     # Prepare the content to append
-    content = f"[{today}]\nPrompt: {prompt}\nAnswer: {answer}\n"
+    question_content = f"[{today.strftime('%Y-%m-%d')}]: {prompt}"
+    answer_content = f"[{today.strftime('%Y-%m-%d')}]: {answer}"
 
-    # Append the content to the file
-    file_path = os.path.join(REPO_PATH, PROMPTS_FILE)
-    append_to_file(file_path, content)
+    # Append the content to the respective files
+    questions_file_path = os.path.join(os.getcwd(), PROMPTS_FILE)
+    answers_file_path = os.path.join(os.getcwd(), ANSWERS_FILE)
+    append_to_file(questions_file_path, question_content)
+    append_to_file(answers_file_path, answer_content)
 
     # Commit and push changes to the Git repository
-    commit_message = f"Add prompt and answer for {today}"
-    git_commit_and_push(REPO_PATH, commit_message)
+    commit_message = f"Add prompt and answer for {today.strftime('%Y-%m-%d')}"
+    git_commit_and_push(commit_message)
 
 
 if __name__ == "__main__":
