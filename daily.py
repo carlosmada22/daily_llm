@@ -24,6 +24,9 @@ def get_previous_answers(date):
     previous_answers = []
     if os.path.exists(answers_file_path):
         with open(answers_file_path, "r") as file:
+            first_line = file.readline().strip()
+            if first_line:
+                previous_answers.append(first_line)  # Add the first line to the previous answers
             for line in file:
                 if line.startswith(f"[{date.strftime('%Y-%m-%d')}]:"):
                     previous_answers.append(line.split("]: ")[1].strip())
