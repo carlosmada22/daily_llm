@@ -9,14 +9,25 @@ from ollama import Client
 PROMPTS_FILE = "questions.txt"
 ANSWERS_FILE = "answers.txt"
 
-def get_prompt_for_date(date, variation=0):
+def get_prompt_for_date(date, previous_answers, variation=0):
     """Generate a prompt asking about something important that happened on the given date in history."""
     base_prompt = f"What is something important that happened on {date.strftime('%B %d')} in history?"
     if variation == 1:
-        return f"Give me information about ANOTHER important thing that happened on {date.strftime('%B %d')} in history (different from before)."
+        return f"Give me information about ANOTHER important thing that happened on {date.strftime('%B %d')} in history (different from these: {previous_answers})."
     elif variation == 2:
-        return f"Give me information about a THIRD important thing that happened on {date.strftime('%B %d')} in history (different from the last two)."
+        return f"Give me information about a THIRD important thing that happened on {date.strftime('%B %d')} in history (different from these: {previous_answers})."
     return base_prompt
+
+def get_previous_answers(date):
+    """Retrieve previous answers for the given date from the answers file."""
+    answers_file_path = os.path.join(os.getcwd(), ANSWERS_FILE)
+    previous_answers = []
+    if os.path.exists(answers_file_path):
+        with open(answers_file_path, "r") as file:
+            for line in file:
+                if line.startswith(f"[{date.strftime('%Y-%m-%d')}]:"):
+                    previous_answers.append(line.split("]: ")[1].strip())
+    return previous_answers
 
 
 def get_answer_from_ollama(prompt):
@@ -62,8 +73,12 @@ def main():
     # Get the current date
     today = datetime.datetime.now()
 
+    # Retrieve previous answers for today's date
+    previous_answers = get_previous_answers(today)
+    previous_answers_text = " | ".join(previous_answers) if previous_answers else "None"
+
     # Generate a prompt for today's date in history
-    prompt = get_prompt_for_date(today, variation)
+    prompt = get_prompt_for_date(today, previous_answers_text, variation)
 
     # Get the answer from Ollama
     answer = get_answer_from_ollama(prompt)
