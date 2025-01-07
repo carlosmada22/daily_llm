@@ -2,15 +2,21 @@ import os
 import subprocess
 import datetime
 import requests
+import sys
 from ollama import Client
 
 # Configuration
 PROMPTS_FILE = "questions.txt"
 ANSWERS_FILE = "answers.txt"
 
-def get_prompt_for_date(date):
+def get_prompt_for_date(date, variation=0):
     """Generate a prompt asking about something important that happened on the given date in history."""
-    return f"What is something important that happened on {date.strftime('%B %d')} in history?"
+    base_prompt = f"What is something important that happened on {date.strftime('%B %d')} in history?"
+    if variation == 1:
+        return f"Give me information about ANOTHER important thing that happened on {date.strftime('%B %d')} in history (different from before)."
+    elif variation == 2:
+        return f"Give me information about a THIRD important thing that happened on {date.strftime('%B %d')} in history (different from the last two)."
+    return base_prompt
 
 
 def get_answer_from_ollama(prompt):
@@ -46,11 +52,18 @@ def chain_question_from_answer(answer):
 
 
 def main():
+    variation = 0
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "-1":
+            variation = 1
+        elif sys.argv[1] == "-2":
+            variation = 2
+
     # Get the current date
     today = datetime.datetime.now()
 
     # Generate a prompt for today's date in history
-    prompt = get_prompt_for_date(today)
+    prompt = get_prompt_for_date(today, variation)
 
     # Get the answer from Ollama
     answer = get_answer_from_ollama(prompt)
