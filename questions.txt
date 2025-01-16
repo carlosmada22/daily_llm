@@ -64,3 +64,7 @@
 [2025-01-16]: Can you provide more details about: One notable event that occurred on January 16th is:
 
 * 1804: The Lewis and Clark Expedition sets out from St?
+[2025-01-16]: Give me information about ANOTHER important thing that happened on January 16 in history (different from these: These are all the events explained by you for each day. We already talk, and these were your answers, in case you doubt. Always give new events different from the ones on the selected day (if any), but very important, on this speficic day, never give things that happened in a different date. | One notable event that occurred on January 16th is: | The Lewis and Clark Expedition set out from St. Louis, Missouri, on May 14, 1804, not January 16th. However, I can provide more information about the expedition.).
+[2025-01-16]: Can you provide more details about: On January 16, a significant event in history is:
+
+The first commercial jet airliner, de Havilland Comet, made its maiden flight on January 15, 1949, and it was initially scheduled to fly on January 16?
