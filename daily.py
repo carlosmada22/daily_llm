@@ -37,7 +37,7 @@ def get_answer_from_ollama(prompt):
     """Send the prompt to Ollama and get an answer."""
     try:
         client = Client()
-        raw_response = client.generate(model="deepseek-r1:7b", prompt=prompt)
+        raw_response = client.generate(model="llama3.2", prompt=prompt)
         print(raw_response.response)
         return raw_response.response
     except requests.RequestException as e:
