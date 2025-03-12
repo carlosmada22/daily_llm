@@ -198,3 +198,5 @@ One important event that took place on March 7 is the discovery of King Tut's to
 [2025-03-12]: Can you provide more details about: One significant event that occurred on March 12th in history is:
 
 The first successful polio vaccine was tested on March 12, 1952, by Dr?
+[2025-03-12]: Give me information about ANOTHER important thing that happened on March 12 in history (different from these: These are all the events explained by you for each day. We already talk, and these were your answers, in case you doubt. Always give new events different from the ones on the selected day (if any), but very important, on this speficic day, never give things that happened in a different date. | One significant event that occurred on March 12th in history is: | One significant event that occurred on March 12th in history is:).
+[2025-03-12]: Can you provide more details about: On March 12, 1919, the Treaty of Versailles was ratified by the German Senate, officially ending World War I and imposing harsh penalties on Germany?

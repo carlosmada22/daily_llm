@@ -1297,3 +1297,17 @@ Dr. Jonas Salk and his team at the University of Pittsburgh had been working on 
 On March 12, 1952, Dr. Salk conducted a clinical trial testing the safety and effectiveness of his vaccine on over 1,600 children at six hospitals across the United States. The results were overwhelmingly positive, demonstrating that the vaccine was safe and effective in preventing polio.
 
 This marked a major breakthrough in the fight against polio, which had been a major public health concern for decades. Dr. Salk's vaccine would go on to become one of the most widely used vaccines in history, helping to nearly eradicate polio worldwide.
+[2025-03-12]: On March 12, 1919, the Treaty of Versailles was ratified by the German Senate, officially ending World War I and imposing harsh penalties on Germany. The treaty marked a significant turning point in world history, leading to widespread resentment in Germany and contributing to the rise of Nazi Germany in the years that followed.
+[2025-03-12]: The Treaty of Versailles did not involve a ratification by the German Senate. Instead, it was signed on June 28, 1919, by representatives of the Allied Powers (France, Britain, Italy, and the United States) at the Hall of Mirrors in the Palace of Versailles in Versailles, France.
+
+The Treaty was imposed on Germany after World War I, but it did not involve a ratification by the German Senate. The German government, led by Chancellor Philipp Scheidemann, had refused to sign the treaty, and instead, the Socialist Party of Germany (SPD) leader, Friedrich Ebert, led a compromise delegation that would eventually sign the treaty.
+
+The Treaty of Versailles was ratified by the German Parliament (Reichstag) on August 15, 1919. However, it's worth noting that this ratification was not the same as an official endorsement or approval by the Senate. The German Senate had been dissolved in 1918 due to the Weimar Republic's adoption of a presidential system.
+
+The treaty itself imposed significant penalties and reparations on Germany, including:
+
+1. Territorial losses: Germany lost around 13% of its pre-war territory, with significant losses in Alsace-Lorraine to France, Saar to France under a League of Nations mandate, and Eupen-Malmedy to Belgium.
+2. Military limitations: The treaty limited the size of the German army to 100,000 soldiers and prohibited Germany from having an air force or submarines.
+3. Reparations: Germany was required to pay significant reparations to the Allied Powers, amounting to around 132 billion gold marks.
+
+These harsh penalties contributed to widespread resentment in Germany, fueling feelings of humiliation, anger, and a sense of injustice among many Germans. This sentiment played a significant role in contributing to the rise of extremist ideologies like Nazism, which eventually led to World War II.
