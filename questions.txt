@@ -268,3 +268,7 @@ On April 16, 1952, a major fire broke out in the Royal Albert Hall in London, En
 The first successful kidney transplant was performed by Dr?
 [2025-05-06]: What is something important that happened on May 06 in history?
 [2025-05-06]: Can you provide more details about: On May 6, several events have occurred throughout history?
+[2025-05-06]: Give me information about ANOTHER important thing that happened on May 06 in history (different from these: These are all the events explained by you for each day. We already talk, and these were your answers, in case you doubt. Always give new events different from the ones on the selected day (if any), but very important, on this speficic day, never give things that happened in a different date. | On May 6, several events have occurred throughout history. Here are a few: | There are many significant events that have occurred on May 6 throughout history. Here are a few:).
+[2025-05-06]: Can you provide more details about: On May 6th, another important event occurred:
+
+* 1917: The United States declared war on Germany, after Germany resumed unrestricted submarine warfare and sank several American merchant ships?
