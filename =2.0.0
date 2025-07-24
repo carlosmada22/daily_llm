@@ -1,0 +1,28 @@
+Channels:
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/cmadaria/miniconda3/envs/legacy
+
+  added / updated specs:
+    - portalocker
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    portalocker-2.3.0          |   py37h06a4308_0          28 KB
+    ------------------------------------------------------------
+                                           Total:          28 KB
+
+The following NEW packages will be INSTALLED:
+
+  portalocker        pkgs/main/linux-64::portalocker-2.3.0-py37h06a4308_0 
+
+
+Proceed ([y]/n)? 
