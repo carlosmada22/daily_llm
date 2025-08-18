@@ -390,3 +390,5 @@ On July 25, 1967, the first Walmart store opened in Rogers, Arkansas?
 [2025-08-05]: Can you provide more details about: After verifying, I found another significant event that occurred on August 5th in history:
 
  On August 5, 1969, the first Apple computer was sold to Mike Murphy, one of the company's co-founders, for $666?
+[2025-08-18]: What is something important that happened on August 18 in history?
+[2025-08-18]: Can you provide more details about: One notable event that occurred on August 18 is the assassination of Archduke Franz Ferdinand, which led to the outbreak of World War I?
