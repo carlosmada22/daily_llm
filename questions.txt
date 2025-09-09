@@ -446,3 +446,7 @@ The Treaty of Paris was signed in 1783, officially ending the American Revolutio
 The first successful launch of a satellite into orbit around the Earth took place on September 8, 1957?
 [2025-09-08]: Give me information about a THIRD important thing that happened on September 08 in history (different from these: These are all the events explained by you for each day. We already talk, and these were your answers, in case you doubt. Always give new events different from the ones on the selected day (if any), but very important, on this speficic day, never give things that happened in a different date. | One significant event that occurred on September 8th is: | The U-2 spy plane incident occurred on September 8, 1960, not September 8, 1962. Here are the details: | Here's another important event that occurred on September 8: | Yes, I can provide more information about this significant event.).
 [2025-09-08]: Can you provide more details about: I'd be happy to provide more information about events that occurred on September 8th?
+[2025-09-09]: What is something important that happened on September 09 in history?
+[2025-09-09]: Can you provide more details about: One significant event that occurred on September 9th in history is:
+
+* In 1901, President William McKinley of the United States was shot by Leon Frank Czolgosz during a speech in Buffalo, New York?
